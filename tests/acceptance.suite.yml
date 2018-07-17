@@ -1,0 +1,32 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+actor: AcceptanceTester
+modules:
+    enabled:
+        PhpBrowser:
+          url: http://stqa1.qa.dotgroup.com.br/#
+        # WebDriver:
+          # url: http://stqa1.qa.dotgroup.com.br/#
+          # browser: chrome
+             - \Helper\Acceptance
+
+gherkin:
+  contexts:
+    default:
+      - "Step\\Acceptance\\AutenticarStudion"
+      - "Step\\Acceptance\\ConsumirConteudoSolucao"
+      - "Step\\Acceptance\\ContextoAdmin"
+      - "Step\\Acceptance\\ContextoEstudante"
+      - "Step\\Acceptance\\CriarConta"
+      - "Step\\Acceptance\\DefinirAssetsObrigatoriosSolucao"
+      - "Step\\Acceptance\\DefinirImagemCertificado"
+      - "Step\\Acceptance\\EditarDadosCadastrais"
+      - "Step\\Acceptance\\EfetuarDownloadCertificadoConclusao"
+      - "Step\\Acceptance\\GerenciarTemplateCertificado"
+      - "Step\\Acceptance\\IncluirUsuarioSession"
+      - "Step\\Acceptance\\RecuperarSenha"
+      - "Step\\Acceptance\\VincularCertificadoSolucao"
